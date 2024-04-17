@@ -29,7 +29,8 @@ body {
 }
 
 .main {
-  background-color: #ffefef;
+  background-image: url("../img/home_background_img.png");
+  background-size: cover;
   width: 100%;
   height: 100dvh;
 }
@@ -44,11 +45,78 @@ body {
   background-color: #f0ebe3;
   width: 100%;
   height: 100dvh;
+  position : relative; /* footer 위치 배치때문에 넣었습니다!*/
 }
 
 /* 태윤님 login CSS ↓ */
 
 /* 초원님 main CSS ↓ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  margin: 0 100px 0 100px;
+  padding: 30px;
+  border-bottom: 1px solid white;
+}
+
+.headerLogo {
+  width: 160px;
+  height: auto;
+}
+
+.headerBtn {
+  width: 150px;
+  height: auto;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  margin-left: auto;
+}
+
+.mainCotent {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainLogo{
+  margin-top: -180px;
+  height: 300px;
+  width: auto;
+}
+
+.footer {
+  width: 100%;
+  background-color: rgb(63, 63, 63);
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 120px;
+  margin-bottom: auto;
+  position: absolute;
+  bottom: 0;
+}
+.footer > img {
+  height: 50px;
+}
+
+.footerDiv {
+  color: white;
+}
+
+.footerEmailTitle {
+  font-size: 15px;
+  
+}
+
+.footerEmail > p {
+  font-size: 13px;
+}
 
 /* 기준님 member CSS ↓ */
 
