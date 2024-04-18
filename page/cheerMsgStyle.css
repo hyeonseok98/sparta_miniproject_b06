@@ -20,13 +20,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-image: url("../img/home_background_img.png");
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 /* 한별님 board CSS ↓ */
+.logoContainer {
+  position: absolute;
+  width: 220px;
+  padding: 0px 50px 50px 0px;
+  top: 5.6vh;
+  left: 6.78vw;
+  transition: top 0.3s, left 0.3s;
+}
+
+.logoContainer:hover {
+  top: calc(5.6vh + 2vh);
+  left: calc(6.78vw + 2vw);
+}
+
+.headerLogo {
+  width: 160px;
+  height: auto;
+}
 
 .title {
   margin: 50px;
@@ -38,7 +56,7 @@ body {
 }
 
 .boardContainer {
-  width: 1100px;
+  width: 1000px;
   height: 90vh;
   background-color: white;
   border-radius: 10px;
@@ -48,7 +66,7 @@ body {
   padding: 2rem 0;
 }
 .review {
-  width: 1090px;
+  width: 990px;
   height: 90vh;
   background-color: white;
   display: flex;
