@@ -20,23 +20,41 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  background-image: url("../img/home_background_img.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* 한별님 board CSS ↓ */
 
 .title {
-  margin: 100px;
+  margin: 50px;
   font-size: 40px;
+  font-weight: bold;
   letter-spacing: -0.0282rem;
   line-height: 52px;
+  color: white;
 }
 
-.review {
+.boardContainer {
   width: 1100px;
-  border: solid 1px #eee;
+  height: 90vh;
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  align-items: center;
+  padding: 2rem 0;
+}
+.review {
+  width: 1090px;
+  height: 90vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow-y: scroll;
 }
 
 .messages {
