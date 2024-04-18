@@ -46,7 +46,6 @@ body {
 }
 
 .cheerMsg {
-  background-color: #f0ebe3;
   width: 100%;
   height: 100dvh;
   position: relative; /* footer 위치 배치때문에 넣었습니다!*/
@@ -231,3 +230,85 @@ body {
 /* 기준님 member CSS ↓ */
 
 /* 남송님 cheerMsg CSS ↓ */
+.cheerMsg >.msg{
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.cheerMsgWrapper {
+  margin: 10px 10%;
+  height: 100px;
+  padding: 20px 40px 20px 20px;
+  background-color: #CDE5C4;
+  display: flex; 
+  align-items: center;
+  border-radius: 10px;
+}
+
+.cheerMsgInput {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-size: 18px;
+  color: white;
+  padding: 0 30px;
+  font-weight: bold;
+}
+
+.cheerMsgInput::placeholder{
+  color: white
+}
+
+.cheerMsgInput:focus{ outline: none;}
+
+.cheerMsgWrapper > img{
+  width: 50px;
+  margin-right: 10px;
+}
+
+.cheerMsgWrapper > .author{
+  color: #808080;
+  font-size: 20px;
+  font-weight: bold;
+  width: 10%;
+  margin-right: 10px;
+}
+
+.cheerMsgWrapper > p{
+  font-size: 35px;
+  text-align: center;
+  width: 70%;
+  margin-right: 3%;
+}
+
+.cheerMsgWrapper > span{
+  color: #808080;;
+  font-size: 16px;
+  font-weight: lighter;
+  width: 50px;
+}
+
+.cheerMsg > button {
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #38B30D;
+  color: white;
+  margin-top: 80px;
+  padding: 10px 30px;
+  border: 0px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.cheerMsg > button:hover{
+  background-color: #30960b;
+}
