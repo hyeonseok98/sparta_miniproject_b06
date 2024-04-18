@@ -48,6 +48,145 @@ body {
 
 /* 태윤님 login CSS ↓ */
 
+/* 로그인, 회원가입 loot페이지 */
+.logInPage,
+.signUpPage {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	display: none;
+}
+
+/* 로그인, 회원가입 모달창 */
+.logInModalBox,
+.signUpModalBox {
+	position: absolute;
+	max-width: 360px;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 25px;
+	border: 0.5px solid #38B30D;
+	border-radius: 12px;
+	box-shadow: rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	z-index: 101;
+}
+
+
+.logInPage.active {
+	display: flex;
+}
+
+
+.signUpPage.active {
+	display: flex;
+}
+
+.logInModalBox h2,
+.signUpModalBox h2 {
+	font-size: 24px;
+	text-align: center;
+	color: #38B30D;
+}
+
+.modalClose {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 14px;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.inputBox {
+	position: relative;
+	margin-top: 30px;
+	width: 100%;
+	height: 40px;
+}
+
+.inputBox input {
+	height: 100%;
+	width: 100%;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid #aaaaaa;
+	transition: all 0.3s ease;
+}
+
+.inputBox input:focus {
+	border-color: #38B30D;
+}
+
+.logInButtonClass,
+.signUpButtonClass {
+	background-color: #38B30D;
+	margin-top: 15px;
+	width: 100%;
+	padding: 10px 0;
+	border-radius: 6px;
+	border: none;
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+}
+
+
+.signUpBox,
+.logInBox {
+	text-align: center;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.signUpBox > a,
+.logInBox > a {
+	color: #38B30D;
+	text-decoration: none;
+}
+
+/* 경고 메세지 */
+.signUpPasswordAlert,
+.signUpEmaildAlert,
+.signUpEmailEmptyAlert,
+.loginIdPasswordAlert {
+	margin-top: 10px;
+	margin-bottom: 0;
+	font-size: 14px;
+	color: rgb(250, 0, 0);
+	display: none;
+}
+
+.signUpPasswordAlert.active,
+.signUpEmaildAlert.active,
+.signUpEmailEmptyAlert.active,
+.loginIdPasswordAlert.active {
+	display: block;
+}
+
+
+/* 로그인박스(테스트용) */
+.testLogInBox {
+	display: none;
+}
+
+.testLogInBox.active {
+	display: block;
+}
+
+/* 로그아웃 박스 */
+.logOutBox {
+	display: none;
+}
+
+.logOutBox.active {
+	display: block;
+}
 /* 초원님 main CSS ↓ */
 
 /* 기준님 member CSS ↓ */

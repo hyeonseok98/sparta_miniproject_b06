@@ -1,32 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MiniProject_아이(i)들</title>
-    <link rel="stylesheet" href="./indexStyle.css" />
-  </head>
-  <body>
-    <div class="content_wrapper">
-      <!-- 초원님 메인 페이지 div -->
-      <div class="main">
-        <header class="header">
-          여기는 header입니다.
-          <!-- 태윤님 메인 페이지 div -->
-          <div class="login"></div>
-        </header>
-        Main을 맡은 초원님 페이지입니다. 다들 파이팅~
-      </div>
 
-      <!-- 기준님 팀원 소개 페이지 div -->
-      <div class="member">팀원을 소개하는 기준님 페이지입니다.</div>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MiniProject_아이(i)들</title>
+	<link rel="stylesheet" href="./indexStyle.css" />
+</head>
 
-      <!-- 남송님 응원글 페이지 div -->
-      <div class="cheerMsg">
-        응원글을 작성하는 남송님 페이지입니다.
-        <footer class="footer"></footer>
-      </div>
-    </div>
-    <script src="./indexScript.js"></script>
-  </body>
+<body>
+	<div class="content_wrapper">
+		<!-- 초원님 메인 페이지 div -->
+		<div class="main">
+			<header class="header">
+				여기는 header입니다.
+
+				<!-- 태윤님 메인 페이지 div -->
+				<div class="login">
+					<!-- 로그인 박스(테스트용) -->
+					<div class="testLogInBox">
+						<button class="testLogIn">로그인 버튼 (TEST)</button>
+					</div>
+
+					<!-- 로그인 모달 -->
+					<div class="logInPage">
+						<div class="logInModalBox">
+							<span class="modalClose logInModalClose">✖</span>
+							<!-- 로그인 폼 -->
+							<div class="form logInForm">
+								<form action="#">
+									<h2>로그인</h2>
+									<div class="inputBox">
+										<input id="logInEmail" type="email" placeholder="이메일을 입력해주세요." required />
+									</div>
+									<div class="inputBox">
+										<input id="logInPassword" type="password" placeholder="비밀번호를 입력해주세요." required />
+									</div>
+									<p class="loginIdPasswordAlert">ID와 패스워드를 확인해주세요!</p>
+									<button id="logInButton" class="logInButtonClass" type="submit">로그인</button>
+									<div class="signUpBox">
+										<span>아이디가 없으신가요?</span>
+										<a href="#" id="signUpPageButton">회원가입</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- 회원가입 모달 -->
+					<div class="signUpPage">
+						<div class="formContainer signUpModalBox">
+							<span class="modalClose signUpModalClose">✖</span>
+							<!-- 회원가입 폼 -->
+							<div class="form singUpForm">
+								<form action="#">
+									<h2>회원가입</h2>
+									<div class="inputBox">
+										<input id="signUpEmail" type="email" placeholder="이메일을 입력해주세요" required />
+									</div>
+									<div class="inputBox">
+										<input id="signUpPassword" type="password" placeholder="비밀번호를 입력해주세요" required />
+									</div>
+									<div class="inputBox">
+										<input id="signUpConfirmPassword" type="password" placeholder="비밀번호 확인" required />
+									</div>
+									<p class="signUpEmaildAlert">이메일 사용 중이거나 형식에 맞지 않습니다.</p>
+									<p class="signUpPasswordAlert">비밀번호가 맞지 않습니다!</p>
+									<p class="signUpEmailEmptyAlert">이메일을 입력해주세요!</p>
+									<button id="signUpButton" class="signUpButtonClass">회원가입</button>
+									<div class="logInBox">
+										<span>이미 회원이신가요?</span>
+										<a href="#" id="logInPageButton">로그인</a>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- 테스트 || 로그인 및 회원가입 성공시 OOO님 출력 후 로그아웃 버튼 출력 -->
+					<div class="logOutBox">
+						<span id="userId"></span>
+						<button id="signOutButton" type="button">로그아웃</button>
+					</div>
+				</div>
+
+			</header>
+			Main을 맡은 초원님 페이지입니다. 다들 파이팅~
+		</div>
+
+		<!-- 기준님 팀원 소개 페이지 div -->
+		<div class="member">팀원을 소개하는 기준님 페이지입니다.</div>
+
+		<!-- 남송님 응원글 페이지 div -->
+		<div class="cheerMsg">
+			응원글을 작성하는 남송님 페이지입니다.
+			<footer class="footer"></footer>
+		</div>
+	</div>
+	<script src="./indexScript.js"></script>
+	<script src="./modal.js"></script>
+	<script type="module" src="./register.js"></script>
+</body>
+
 </html>
