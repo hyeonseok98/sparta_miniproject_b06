@@ -40,8 +40,9 @@ getDocs(reviewRef).then((querySnapshot) => {
 });
 
 function displayReviews(reviewList) {
-  reviewList.forEach(function (review, order) {
-    const className = order % 2 === 0 ? "yours" : "mine";
+  let order = true;
+  reviewList.forEach(function (review) {
+    const className = order ? "yours" : "mine";
     const temp_html = `<div class="${className} messages" data-id="${review.id}"> 
               <div class="message last">
                   <h3 class="name">${review.name}</h3>
@@ -53,6 +54,7 @@ function displayReviews(reviewList) {
               </div>
           </div>`;
     $(".review").append(temp_html);
+    order = !order;
   });
 }
 
