@@ -3,8 +3,8 @@
  */
 const wrap = document.getElementsByClassName("content_wrapper")[0];
 
-const DEFAULT_PAGENUMBER = 3;
-const LAST_PAGENUMBER = 2;
+const DEFAULT_PAGENUMBER = 3; 
+const LAST_PAGENUMBER = 3; //페이지 추가로 숫자 변경했습니다!
 let page = 0;
 
 const scrollSystem = (e) => {
