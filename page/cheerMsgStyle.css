@@ -27,6 +27,7 @@ body {
 }
 
 /* 한별님 board CSS ↓ */
+
 .logoContainer {
   position: absolute;
   width: 220px;
@@ -34,6 +35,7 @@ body {
   top: 5.6vh;
   left: 6.78vw;
   transition: top 0.3s, left 0.3s;
+  transition-timing-function: ease-out;
 }
 
 .logoContainer:hover {
