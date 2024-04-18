@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 *,
 *::before,
@@ -16,7 +16,9 @@ body {
 }
 
 body {
-  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -47,7 +49,7 @@ body {
   background-color: #f0ebe3;
   width: 100%;
   height: 100dvh;
-  position : relative; /* footer 위치 배치때문에 넣었습니다!*/
+  position: relative; /* footer 위치 배치때문에 넣었습니다!*/
 }
 
 /* 태윤님 login CSS ↓ */
@@ -76,7 +78,7 @@ body {
 .teamTitleText {
   font-size: 90px;
   font-weight: bolder;
-  color: #30B21E;
+  color: #30b21e;
 }
 
 .teamContent {
@@ -153,7 +155,7 @@ body {
 }
 
 .headerBtn:hover {
-  color:#30B21E;
+  color: #30b21e;
 }
 
 .headerLoginBtn {
@@ -162,19 +164,19 @@ body {
   color: white;
   background-color: transparent;
   border-radius: 9px;
-  border: 2px solid #30B21E;
+  border: 2px solid #30b21e;
 }
 
 .headerLoginBtn:hover {
-  background-color: #30B21E;
+  background-color: #30b21e;
 }
 
 .headerLogoutBtn {
   font-size: 20px;
   padding: 5px 10px;
   color: white;
-  background-color: #30B21E;
-  border: 2px solid #30B21E;
+  background-color: #30b21e;
+  border: 2px solid #30b21e;
   border-radius: 9px;
   margin-left: 10px;
 }
@@ -185,7 +187,7 @@ body {
 }
 
 .mainContent {
-  width:100%;
+  width: 100%;
   height: calc(100dvh - 150px);
   display: flex;
   justify-content: center;
@@ -193,7 +195,7 @@ body {
   margin: 0;
 }
 
-.mainLogo{
+.mainLogo {
   margin-top: -180px;
   height: 300px;
   width: auto;
@@ -220,7 +222,6 @@ body {
 
 .footerEmailTitle {
   font-size: 15px;
-  
 }
 
 .footerEmail > p {
