@@ -3,34 +3,36 @@
  */
 const wrap = document.getElementsByClassName("content_wrapper")[0];
 
-const DEFAULT_PAGENUMBER = 3;
-const LAST_PAGENUMBER = 3; //페이지 추가로 숫자 변경했습니다!
+const DEFAULT_PAGENUMBER = 4;
+const LAST_PAGENUMBER = DEFAULT_PAGENUMBER - 1;
+let isAnimating = false;
 let page = 0;
 
-const scrollSystem = (e) => {
+const handleScroll = (e) => {
   e.preventDefault();
-  if (e.deltaY > 0) {
-    page++;
-  } else if (e.deltaY < 0) {
-    page--;
+  if (!isAnimating) {
+    if (e.deltaY > 0) {
+      page++;
+    } else if (e.deltaY < 0) {
+      page--;
+    }
+
+    if (page < 0) {
+      page = 0;
+    } else if (page > LAST_PAGENUMBER) {
+      page = LAST_PAGENUMBER;
+    }
+    wrap.style.top = page * -100 + "dvh";
+    wrap.style.transition = "top 0.5s ease";
+    isAnimating = true;
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 500);
   }
-  if (page < 0) {
-    page = 0;
-  } else if (page > LAST_PAGENUMBER) {
-    page = LAST_PAGENUMBER;
-  }
-  console.log(e.deltaY);
-  wrap.style.transition = "top 0.5s ease";
-  wrap.style.top = page * -100 + "vh";
 };
 
-window.addEventListener("wheel", scrollSystem, { passive: false });
-
-/**
- * 윤기준 수정사항 => 스크롤 기능 구현하는 기존 함수를 분리해내 scrollSystem이라는 새로운 함수로 명명했습니다.
- * 모달 열었을 때 해당 함수가 remove되고, 모달을 다시 닫았을 때 해당 함수를 다시 추가해
- * 모달 열려있을 때 외부 스크롤이 작동하는걸 방지하기 위함입니다.
- */
+window.addEventListener("wheel", handleScroll, { passive: false });
 
 /**
  * 윤기준 JS
@@ -63,58 +65,58 @@ const [
 
 const showProfile01 = () => {
   TEAMMATE01_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 const showProfile02 = () => {
   TEAMMATE02_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 const showProfile03 = () => {
   TEAMMATE03_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 const showProfile04 = () => {
   TEAMMATE04_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 const showProfile05 = () => {
   TEAMMATE05_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 const showProfile06 = () => {
   TEAMMATE06_MODAL.style.display = "block";
-  window.removeEventListener("wheel", scrollSystem);
+  window.removeEventListener("wheel", handleScroll);
 };
 
 const exitModal01 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 const exitModal02 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 const exitModal03 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 const exitModal04 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 const exitModal05 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 const exitModal06 = (event) => {
   let exitTargetModal = event.target.parentElement.parentElement;
   exitTargetModal.style.display = "none";
-  window.addEventListener("wheel", scrollSystem, { passive: false });
+  window.addEventListener("wheel", handleScroll, { passive: false });
 };
 
 TEAMMATE01.addEventListener("click", showProfile01);
