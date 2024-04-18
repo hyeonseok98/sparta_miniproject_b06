@@ -113,20 +113,15 @@ logInButton.addEventListener("click", (e) => {
 });
 
 // 로그인 유무
-let isLogin;
-
 // 사용자의 로그인 상태 변경사항을 관찰 // 로그인이 안돼있으면 null값을 반환함
 onAuthStateChanged(auth, (user) => {
   // 로그인이 돼있을 때
   if (user) {
-    isLogin = true;
     testLogInBox.classList.remove("active");
-    logOutBox.classList.add("active"); // 로그아웃 박스 제거
+    logOutBox.classList.add("active");
     userId.innerText = `${user.email}`;
-    return (loginId = user.email);
   } else {
     // 로그인 안돼있을 때
-    isLogin = false;
     testLogInBox.classList.add("active");
     userId.innerText = ``;
     logOutBox.classList.remove("active"); // 로그아웃 박스 제거
