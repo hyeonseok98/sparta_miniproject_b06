@@ -72,9 +72,10 @@ cheerBtn.addEventListener('click', () => {
     alert("응원글을 입력하세요.")
   }else{
     addDoc(collection(db, "Cheering message"),{
-      name: auth.currentUser.name,
+      //name: auth.currentUser.name,
+      name: "테스트",
       comment: cheerText.value
-    }).then()
+    }).then(location.href="\cheerMsg.html")
   }
   
 });
