@@ -27,22 +27,17 @@ const db = getFirestore(app);
 const reviewRef = collection(db, "reviews");
 let reviewList = [];
 
-getDocs(reviewRef)
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      let reviewData = {
-        id: doc.id,
-        name: doc.data().name,
-        comment: doc.data().comment,
-      };
-      reviewList.push(reviewData);
-    });
-    console.log(reviewList);
-    displayReviews(reviewList);
-  })
-  .catch((error) => {
-    console.error("Error getting documents: ", error);
+getDocs(reviewRef).then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    let reviewData = {
+      id: doc.id,
+      name: doc.data().name,
+      comment: doc.data().comment,
+    };
+    reviewList.push(reviewData);
   });
+  displayReviews(reviewList);
+});
 
 function displayReviews(reviewList) {
   reviewList.forEach(function (review, order) {
@@ -62,7 +57,7 @@ function displayReviews(reviewList) {
 }
 
 // 수정 버튼
-$(document).on("click", ".editButton", function () {
+const editButtonClick = function () {
   const messageDiv = $(this).closest(".messages");
   const textDiv = messageDiv.find(".text");
   const newText = prompt("수정할 내용을 입력하세요", textDiv.text());
@@ -73,35 +68,24 @@ $(document).on("click", ".editButton", function () {
     const docRef = doc(db, "reviews", messageId);
     updateDoc(docRef, {
       comment: newText,
-    })
-      .then(() => {
-        console.log("Document successfully updated!");
-      })
-      .catch((error) => {
-        console.error("Error updating document: ", error);
-      });
+    });
     alert("수정되었습니다.");
   } else {
     alert("내용을 입력하세요.");
   }
-});
+};
+$(document).on("click", ".editButton", editButtonClick);
 
 // 삭제 버튼
-$(document).on("click", ".deleteButton", function () {
+const deleteButtonClick = function () {
   const messageDiv = $(this).closest(".messages");
   const messageId = messageDiv.data("id");
 
   if (confirm("응원글을 정말 삭제하시겠습니까?")) {
     const docRef = doc(db, "reviews", messageId);
-    deleteDoc(docRef)
-      .then(() => {
-        console.log("Document successfully deleted!");
-      })
-      .catch((error) => {
-        console.error("Error removing document: ", error);
-      });
-
+    deleteDoc(docRef);
     messageDiv.remove();
     alert("삭제되었습니다.");
   }
-});
+};
+$(document).on("click", ".deleteButton", deleteButtonClick);
