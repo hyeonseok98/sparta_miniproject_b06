@@ -13,14 +13,12 @@
 		<!-- 초원님 메인 페이지 div -->
 		<div class="main">
 			<header class="header">
-				여기는 header입니다.
-
+				<img class="headerLogo" src="../img/logo_white.png" />
+				<button class="headerBtn" onclick="location.href='cheerMsg.html'">응원의 글</button>
+				<button class="headerLoginBtn">Login</button>
+				<button class="headerLogoutBtn">Logout</button>
 				<!-- 태윤님 메인 페이지 div -->
 				<div class="login">
-					<!-- 로그인 박스(테스트용) -->
-					<div class="testLogInBox">
-						<button class="testLogIn">로그인 버튼 (TEST)</button>
-					</div>
 
 					<!-- 로그인 모달 -->
 					<div class="logInPage">
@@ -59,12 +57,12 @@
 										<input id="signUpEmail" type="email" placeholder="이메일을 입력해주세요" required />
 									</div>
 									<div class="inputBox">
-										<input id="signUpPassword" type="password" placeholder="비밀번호를 입력해주세요" required />
+										<input id="signUpPassword" type="password" placeholder="비밀번호를 입력해주세요 (최소 6자)" required />
 									</div>
 									<div class="inputBox">
 										<input id="signUpConfirmPassword" type="password" placeholder="비밀번호 확인" required />
 									</div>
-									<p class="signUpEmaildAlert">이메일 사용 중이거나 형식에 맞지 않습니다.</p>
+									<p class="signUpEmaildAlert">이메일이 사용 중이거나 형식에 맞지 않습니다.</p>
 									<p class="signUpPasswordAlert">비밀번호가 맞지 않습니다!</p>
 									<p class="signUpEmailEmptyAlert">이메일을 입력해주세요!</p>
 									<button id="signUpButton" class="signUpButtonClass">회원가입</button>
@@ -78,14 +76,47 @@
 					</div>
 
 					<!-- 테스트 || 로그인 및 회원가입 성공시 OOO님 출력 후 로그아웃 버튼 출력 -->
-					<div class="logOutBox">
+					<!-- <div class="logOutBox">
 						<span id="userId"></span>
 						<button id="signOutButton" type="button">로그아웃</button>
-					</div>
+					</div> -->
 				</div>
 
 			</header>
-			Main을 맡은 초원님 페이지입니다. 다들 파이팅~
+			<div class="mainContent">
+				<img class="mainLogo" src="../img/logo_white.png" />
+			</div>
+		</div>
+
+		<!--팀 소개 페이지-->
+		<div class="team">
+			<div class="teamTitle">
+				<p class="teamTitleText">우리 팀을 소개합니다</p>
+			</div>
+			<div class="teamContent">
+				<div id="teamDiv" class="teamRules">
+					<p id="teamDivTitle">Rules</p>
+					<p id="teamText">✅ 서로 존중하기</p>
+					<p id="teamText">✅ 서로 물어보기</p>
+					<p id="teamText">✅ 서로 공유하기</p>
+					<p id="teamText">✅ 지각은 NO!</p>
+					<p id="teamText">✅ 연락 확인 수시로</p>
+				</div>
+				<div id="teamDiv" class="teamGoals">
+					<p id="teamDivTitle">Goals</p>
+					<p id="teamText">🥇 부트캠프 수료</p>
+					<p id="teamText">🥇 개발자 되기</p>
+					<p id="teamText">🥇 취업 하기</p>
+				</div>
+				<div class="teamAbout">
+					<p id="teamDivTitle">About Us</p>
+					<p class="teamInfoText">
+						저희 팀은 대문자 I(아이)로 이루어진 아이들 입니다.
+						이루고자 하는 목표를 가지고 모여 꿈을 달성하기 위해
+						오늘도 열심히 달리는 중입니다!🏃
+					</p>
+				</div>
+			</div>
 		</div>
 
 		<!-- 기준님 팀원 소개 페이지 div -->
@@ -94,7 +125,20 @@
 		<!-- 남송님 응원글 페이지 div -->
 		<div class="cheerMsg">
 			응원글을 작성하는 남송님 페이지입니다.
-			<footer class="footer"></footer>
+			<footer class="footer">
+				<img src="../img/logo_white.png" />
+				<div class="footerDiv">
+					<p class="footerEmailTitle">Email</p>
+					<div class="footerEmail">
+						<p>kukubasak@gmail.com</p>
+						<p>mashroom11@gmail.com</p>
+						<p>parkcandle@gmail.com</p>
+						<p>kim99326@gmail.com</p>
+						<p>arozic425@gmail.com</p>
+						<p>lwe12f675@gmail.com</p>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
 	<script src="./indexScript.js"></script>

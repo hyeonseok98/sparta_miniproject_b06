@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const testLogIn = document.querySelector(".testLogIn"); // 테스트 로그인 버튼
+const headerLoginBtn = document.querySelector(".headerLoginBtn"); // 헤더부분 로그인 버튼
 
 const logInPage = document.querySelector(".logInPage"); // 로그인 페이지
 const signUpPage = document.querySelector(".signUpPage"); // 회원가입 페이지
@@ -29,7 +29,7 @@ const logOutBox = document.querySelector(".logOutBox"); // 로그아웃 박스
 const loginIdPasswordAlert = document.querySelector(".loginIdPasswordAlert"); // 로그인 id,pw 확인 경고
 
 // 로그인 클릭 시 로그인 모달창 열기
-testLogIn.addEventListener("click", () => {
+headerLoginBtn.addEventListener("click", () => {
   logInPage.classList.add("active");
 });
 

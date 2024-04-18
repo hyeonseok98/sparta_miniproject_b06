@@ -26,10 +26,12 @@ import {
 const logInButton = document.getElementById("logInButton"); // 로그인bt
 const signUpButton = document.getElementById("signUpButton"); // 회원가입bt
 
-const userId = document.getElementById("userId"); // 유저ID 출력 자리
+// const userId = document.getElementById("userId"); // 유저ID 출력 자리
 
-const testLogInBox = document.querySelector(".testLogInBox"); // 테스트 로그인 div
-const logOutBox = document.querySelector(".logOutBox"); // 로그아웃 div
+const headerLoginBtn = document.querySelector(".headerLoginBtn"); // 헤더 로그인
+const headerLogoutBtn = document.querySelector(".headerLogoutBtn"); // 헤더 로그아웃
+
+// const logOutBox = document.querySelector(".logOutBox"); // 로그아웃 div
 
 const signUpEmaildAlert = document.querySelector(".signUpEmaildAlert"); // 회원가입 이메일 경고
 const signUpPasswordAlert = document.querySelector(".signUpPasswordAlert"); // 회원가입 비번 경고
@@ -47,7 +49,7 @@ signUpButton.addEventListener("click", (e) => {
   let signUpEmail = document.getElementById("signUpEmail");
   let signUpPassword = document.getElementById("signUpPassword");
   let signUpConfirmPassword = document.getElementById("signUpConfirmPassword");
-
+  console.log(signUpPassword.value.lenth);
   // 이메일 확인
   if (signUpEmail.value === "") {
     signUpEmailEmptyAlert.classList.add("active");
@@ -59,6 +61,12 @@ signUpButton.addEventListener("click", (e) => {
     signUpEmailEmptyAlert.classList.remove("active");
     return;
   }
+  // 비밀번호 글자수 제한 (최소 6자)
+  if (signUpPassword.value.length < 6) {
+    alert("비밀번호를 최소 6자 이상 입력해주세요.");
+    return;
+  }
+
   if (signUpPassword.value === signUpConfirmPassword.value) {
     signUpPasswordAlert.classList.remove("active");
   }
@@ -72,8 +80,9 @@ signUpButton.addEventListener("click", (e) => {
       signUpPassword.value = "";
       signUpConfirmPassword.value = "";
       signUpEmaildAlert.classList.remove("active");
+      signUpEmailEmptyAlert.classList.remove("active");
       signUpPage.classList.remove("active");
-      testLogInBox.classList.remove("active");
+      headerLoginBtn.classList.remove("active");
       alert(`${user.email}님, 회원가입을 축하드립니다!`);
     })
     .catch((err) => {
@@ -101,9 +110,10 @@ logInButton.addEventListener("click", (e) => {
       logInEmail.value = "";
       logInPassword.value = "";
       logInPage.classList.remove("active");
-      logOutBox.classList.add("active");
+      headerLogoutBtn.classList.add("active");
       loginIdPasswordAlert.classList.remove("active");
-      userId.innerText = `${user.email}`;
+      // userId.innerText = `${user.email}`;
+      alert(`${user.email}님! 환영합니다!`);
     })
     .catch((err) => {
       // 로그인 실패
@@ -117,22 +127,21 @@ logInButton.addEventListener("click", (e) => {
 onAuthStateChanged(auth, (user) => {
   // 로그인이 돼있을 때
   if (user) {
-    testLogInBox.classList.remove("active");
-    logOutBox.classList.add("active");
-    userId.innerText = `${user.email}`;
+    headerLoginBtn.classList.remove("active");
+    headerLogoutBtn.classList.add("active");
+    // userId.innerText = `${user.email}`;
   } else {
     // 로그인 안돼있을 때
-    testLogInBox.classList.add("active");
-    userId.innerText = ``;
-    logOutBox.classList.remove("active"); // 로그아웃 박스 제거
+    headerLoginBtn.classList.add("active");
+    // userId.innerText = ``;
+    headerLogoutBtn.classList.remove("active"); // 로그아웃 박스 생성
   }
 });
 
 // 로그아웃 처리
-const signOutButton = document.getElementById("signOutButton");
-signOutButton.addEventListener("click", (e) => {
+headerLogoutBtn.addEventListener("click", (e) => {
   e.preventDefault();
   auth.signOut();
-  logOutBox.classList.remove("active"); // 로그아웃 박스 제거
+  headerLogoutBtn.classList.remove("active"); // 로그아웃 박스 제거
   alert("정상적으로 로그아웃 되었습니다.");
 });

@@ -1,4 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 *,
 *::before,
@@ -16,7 +16,9 @@ body {
 }
 
 body {
-  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue",
+    "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -29,9 +31,12 @@ body {
 }
 
 .main {
-  background-color: #ffefef;
+  background-image: url("../img/home_background_img.png");
+  background-size: cover;
   width: 100%;
   height: 100dvh;
+  margin: 0;
+  padding: 0;
 }
 
 .member {
@@ -44,6 +49,7 @@ body {
   background-color: #f0ebe3;
   width: 100%;
   height: 100dvh;
+  position: relative; /* footer 위치 배치때문에 넣었습니다!*/
 }
 
 /* 태윤님 login CSS ↓ */
@@ -171,23 +177,195 @@ body {
 
 
 /* 로그인박스(테스트용) */
-.testLogInBox {
+.headerLoginBtn {
 	display: none;
 }
 
-.testLogInBox.active {
+.headerLoginBtn.active {
 	display: block;
 }
 
 /* 로그아웃 박스 */
-.logOutBox {
+.headerLogoutBtn {
 	display: none;
 }
 
-.logOutBox.active {
+.headerLogoutBtn.active {
 	display: block;
 }
 /* 초원님 main CSS ↓ */
+/* team page css */
+.team {
+  width: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.team > p {
+  display: block;
+}
+
+.teamTitle {
+  margin: 0 400px;
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.teamTitleText {
+  font-size: 90px;
+  font-weight: bolder;
+  color: #30b21e;
+}
+
+.teamContent {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.teamContent #teamDivTitle {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  padding: 15px 0 25px 0;
+}
+
+.teamAbout {
+  width: 350px;
+  height: 400px;
+  padding: 40px 50px;
+  border: 4px solid #43a737;
+  border-radius: 40px;
+  margin: 50px 15px;
+}
+
+#teamDiv {
+  width: 350px;
+  height: 400px;
+  padding: 40px 70px;
+  border: 4px solid #43a737;
+  border-radius: 40px;
+  margin: 50px 15px;
+}
+
+#teamText {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.teamInfoText {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 35px;
+}
+
+/* main page css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  height: 150px;
+  margin: 0 100px 0 100px;
+  padding: 30px;
+  border-bottom: 1px solid white;
+}
+
+.headerLogo {
+  width: 160px;
+  height: auto;
+}
+
+.headerBtn {
+  width: 150px;
+  height: auto;
+  background-color: transparent;
+  border: transparent;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  margin-left: auto;
+}
+
+.headerBtn:hover {
+  color: #30b21e;
+}
+
+.headerLoginBtn {
+  font-size: 20px;
+  padding: 5px 10px;
+  color: white;
+  background-color: transparent;
+  border-radius: 9px;
+  border: 2px solid #30b21e;
+}
+
+.headerLoginBtn:hover {
+  background-color: #30b21e;
+}
+
+.headerLogoutBtn {
+  font-size: 20px;
+  padding: 5px 10px;
+  color: white;
+  background-color: #30b21e;
+  border: 2px solid #30b21e;
+  border-radius: 9px;
+  margin-left: 10px;
+}
+
+.headerLogoutBtn:hover {
+  background-color: #289219;
+  border-color: #289219;
+}
+
+.mainContent {
+  width: 100%;
+  height: calc(100dvh - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.mainLogo {
+  margin-top: -180px;
+  height: 300px;
+  width: auto;
+}
+
+/* footer css */
+.footer {
+  width: 100%;
+  background-color: rgb(63, 63, 63);
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 120px;
+  margin-bottom: auto;
+  position: absolute;
+  bottom: 0;
+}
+.footer > img {
+  height: 50px;
+}
+
+.footerDiv {
+  color: white;
+}
+
+.footerEmailTitle {
+  font-size: 15px;
+}
+
+.footerEmail > p {
+  font-size: 13px;
+}
 
 /* 기준님 member CSS ↓ */
 
