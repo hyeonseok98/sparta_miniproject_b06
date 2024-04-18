@@ -3,7 +3,7 @@
  */
 const wrap = document.getElementsByClassName("content_wrapper")[0];
 
-const DEFAULT_PAGENUMBER = 3; 
+const DEFAULT_PAGENUMBER = 3;
 const LAST_PAGENUMBER = 3; //페이지 추가로 숫자 변경했습니다!
 let page = 0;
 
@@ -35,24 +35,23 @@ window.addEventListener("wheel", scrollSystem, { passive: false });
 /**
  * 윤기준 JS
  */
-const [TEAMMATE01, TEAMMATE02, TEAMMATE03, TEAMMATE04, TEAMMATE05, TEAMMATE06] = [
-  document.getElementById("teammate01"),
-  document.getElementById("teammate02"),
-  document.getElementById("teammate03"),
-  document.getElementById("teammate04"),
-  document.getElementById("teammate05"),
-  document.getElementById("teammate06"),
-];
+let teammateArr = [];
+for (let i = 1; i <= 6; i++) {
+  teammateArr.push(document.getElementById("teammate" + "0" + i.toString()));
+}
+const [TEAMMATE01, TEAMMATE02, TEAMMATE03, TEAMMATE04, TEAMMATE05, TEAMMATE06] = teammateArr;
 
-const [TEAMMATE01_MODAL, TEAMMATE02_MODAL, TEAMMATE03_MODAL, TEAMMATE04_MODAL, TEAMMATE05_MODAL, TEAMMATE06_MODAL] = [
-  document.getElementById("teammateModal01"),
-  document.getElementById("teammateModal02"),
-  document.getElementById("teammateModal03"),
-  document.getElementById("teammateModal04"),
-  document.getElementById("teammateModal05"),
-  document.getElementById("teammateModal06"),
-];
+let teammateModalArr = [];
+for (let i = 1; i <= 6; i++) {
+  teammateModalArr.push(document.getElementById("teammateModal" + "0" + i.toString()));
+}
+const [TEAMMATE01_MODAL, TEAMMATE02_MODAL, TEAMMATE03_MODAL, TEAMMATE04_MODAL, TEAMMATE05_MODAL, TEAMMATE06_MODAL] =
+  teammateModalArr;
 
+let teammateModalExitBtnArr = [];
+for (let i = 1; i <= 6; i++) {
+  teammateModalExitBtnArr.push(document.getElementById("modalExitBtn" + "0" + i.toString()));
+}
 const [
   TEAMMATE01_MODAL_EXIT_BTN,
   TEAMMATE02_MODAL_EXIT_BTN,
@@ -60,14 +59,7 @@ const [
   TEAMMATE04_MODAL_EXIT_BTN,
   TEAMMATE05_MODAL_EXIT_BTN,
   TEAMMATE06_MODAL_EXIT_BTN,
-] = [
-  document.getElementById("modalExitBtn01"),
-  document.getElementById("modalExitBtn02"),
-  document.getElementById("modalExitBtn03"),
-  document.getElementById("modalExitBtn04"),
-  document.getElementById("modalExitBtn05"),
-  document.getElementById("modalExitBtn06"),
-];
+] = teammateModalExitBtnArr;
 
 const showProfile01 = () => {
   TEAMMATE01_MODAL.style.display = "block";
