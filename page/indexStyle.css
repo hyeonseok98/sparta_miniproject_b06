@@ -40,7 +40,7 @@ body {
 }
 
 .member {
-  background-color: #f3d0d7;
+
   width: 100%;
   height: 100dvh;
 }
@@ -229,5 +229,215 @@ body {
 }
 
 /* 기준님 member CSS ↓ */
+.teammateIntro_main {
+  margin: 120px 50px 20px 50px;
+
+  /* background-color: blueviolet; */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.teammateIntro_text {
+  font-size: 80px;
+
+  margin-left: 40px;
+  margin-bottom: 50px;
+
+  width: 1200px;
+  /* background-color: skyblue; */
+  color: #38B30D;
+}
+
+.teammateIntro_members {
+  width: 2400px;
+  /* background-color: red; */
+}
+.teammateIntro_membersSector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.teammate {
+  margin: 10px 40px 10px 40px;
+
+  width: 250px;
+  height: 330px;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+  cursor : pointer
+}
+
+.teammateRightEnd {
+  margin: 10px 90px 10px 40px;
+
+  width: 250px;
+  height: 330px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+  cursor : pointer
+}
+
+.teammateLeftEnd {
+  margin: 10px 40px 10px 90px;
+
+  width: 250px;
+  height: 330px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
+  cursor : pointer;
+}
+
+.teammate:hover {
+
+  width: 270px;
+  height: 330px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+  
+  transition: 0.3s;
+}
+
+.teammateLeftEnd:hover {
+
+  width: 270px;
+  height: 330px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+  
+  transition: 0.3s;
+}
+
+.teammateRightEnd:hover {
+
+  width: 270px;
+  height: 330px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
+  
+  transition: 0.5s;
+}
+
+.teammateImage {
+  width: 160px;
+  margin-top: 30px;
+}
+
+.teammateImage_modified {
+  width: 140px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.teammatePosition {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #38B30D;
+}
+
+.teammateName {
+  margin-top: -10px;
+  font-size: 24px;
+  color: #444742;
+}
+
+.teammateModal{
+  position:absolute;
+  display:none;
+  justify-content: center;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  background-color: rgba(0,0,0,0.4);
+  
+}
+
+.teammateModalBody{
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width:500px; 
+  height:780px; 
+
+
+  background-color: rgb(255,255,255); 
+  border-radius:10px;  
+  box-shadow:0 2px 3px 0 rgba(34,36,38,0.25); 
+}
+
+.modalExitBtn{
+  margin: 30px 0px 0px 430px;
+  border:rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 2em;
+  font-weight: bold;
+  color:rgb(159, 159, 159);
+  cursor : pointer;
+}
+
+.modalExitBtn:hover{
+  color:rgb(49, 96, 34);
+  transition: 0.5s;
+}
+
+.modalProfileSection {
+  width: 400px;
+  margin-top: -25px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items:end;
+}
+
+.modalTeammateProfile
+{
+  
+  margin-left: 55px;
+}
+
+.modalTeammateImage {
+  width: 190px;
+  margin-top: 20px;
+}
+
+.modalTeammatePosition {
+
+  font-size: 24px;
+  color: #38B30D;
+}
+
+.modalTeammateName {
+  margin-top: -15px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  color: #000000;
+}
+
+.modalTeammateDescription{
+  width: 400px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.modalTeammateDescription_title {
+  font-size: 20px;
+  color: #000000;
+}
+
+.modalTeammateDescription_content {
+  margin-top: -10px;
+  font-size: 16px;
+  color: #444742;
+}
 
 /* 남송님 cheerMsg CSS ↓ */
