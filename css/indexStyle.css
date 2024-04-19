@@ -300,6 +300,7 @@ body {
 }
 
 .headerBtn:hover {
+  cursor: pointer;
   color: #30b21e;
 }
 
@@ -314,6 +315,7 @@ body {
 }
 
 .headerLoginBtn:hover {
+  cursor: pointer;
   background-color: #30b21e;
 }
 
@@ -328,6 +330,7 @@ body {
 }
 
 .headerLogoutBtn:hover {
+  cursor: pointer;
   background-color: #289219;
   border-color: #289219;
 }
