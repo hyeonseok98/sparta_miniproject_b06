@@ -132,3 +132,29 @@ TEAMMATE03_MODAL_EXIT_BTN.addEventListener("click", exitModal03);
 TEAMMATE04_MODAL_EXIT_BTN.addEventListener("click", exitModal04);
 TEAMMATE05_MODAL_EXIT_BTN.addEventListener("click", exitModal05);
 TEAMMATE06_MODAL_EXIT_BTN.addEventListener("click", exitModal06);
+
+// chatModal 기능
+// 채팅 모달 구현
+const openChatBtn = document.getElementById("openChatBoard");
+const closeBtn = document.getElementById("closeBtn");
+const chatModal = document.getElementById("board");
+let modalOpened = false;
+
+openChatBtn.addEventListener("click", () => {
+  if (modalOpened) {
+    chatModal.classList.remove("active");
+  } else {
+    chatModal.classList.add("active");
+  }
+  modalOpened = !modalOpened;
+});
+
+closeBtn.addEventListener("click", () => {
+  chatModal.classList.remove("active");
+});
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    chatModal.classList.remove("active");
+  }
+});
