@@ -27,6 +27,24 @@ body {
 }
 
 /* 한별님 board CSS ↓ */
+.logoContainer {
+  position: absolute;
+  width: 220px;
+  padding: 0px 50px 50px 0px;
+  top: 5.6vh;
+  left: 6.78vw;
+  transition: top 0.3s, left 0.3s;
+}
+
+.logoContainer:hover {
+  top: calc(5.6vh + 2vh);
+  left: calc(6.78vw + 2vw);
+}
+
+.headerLogo {
+  width: 160px;
+  height: auto;
+}
 
 .logoContainer {
   position: absolute;
