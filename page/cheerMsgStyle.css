@@ -24,9 +24,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url("../img/home_background_img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* 한별님 board CSS ↓ */
