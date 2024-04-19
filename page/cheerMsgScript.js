@@ -24,7 +24,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const reviewRef = collection(db, "reviews");
+const reviewRef = collection(db, "Cheering message");
 let reviewList = [];
 
 getDocs(reviewRef).then((querySnapshot) => {
@@ -67,7 +67,7 @@ const editButtonClick = function () {
 
   if (newText !== null && newText.trim() !== "") {
     textDiv.text(newText);
-    const docRef = doc(db, "reviews", messageId);
+    const docRef = doc(db, "Cheering message", messageId);
     updateDoc(docRef, {
       comment: newText,
     });
@@ -84,7 +84,7 @@ const deleteButtonClick = function () {
   const messageId = messageDiv.data("id");
 
   if (confirm("응원글을 정말 삭제하시겠습니까?")) {
-    const docRef = doc(db, "reviews", messageId);
+    const docRef = doc(db, "Cheering message", messageId);
     deleteDoc(docRef);
     messageDiv.remove();
     alert("삭제되었습니다.");

@@ -43,20 +43,162 @@ body {
 }
 
 .member {
-
   width: 100%;
   height: 100dvh;
 }
 
 .cheerMsg {
-  background-color: #f0ebe3;
   width: 100%;
   height: 100dvh;
   position: relative; /* footer 위치 배치때문에 넣었습니다!*/
 }
 
 /* 태윤님 login CSS ↓ */
+/* 로그인, 회원가입 페이지 */
+.logInPage,
+.signUpPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1050;
+}
 
+/* 로그인, 회원가입 모달창 */
+.logInModalBox,
+.signUpModalBox {
+  position: absolute;
+  max-width: 360px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  border: 0.5px solid #38b30d;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 101;
+}
+
+.logInPage.active {
+  display: flex;
+}
+
+.signUpPage.active {
+  display: flex;
+}
+
+.logInModalBox h2,
+.signUpModalBox h2 {
+  font-size: 24px;
+  text-align: center;
+  color: #38b30d;
+}
+
+.modalClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.inputBox {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
+}
+
+.inputBox input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #aaaaaa;
+  transition: all 0.3s ease;
+}
+
+.inputBox input:focus {
+  border-color: #38b30d;
+}
+
+.logInButtonClass,
+.signUpButtonClass {
+  background-color: #38b30d;
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.signUpBox,
+.logInBox {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.signUpBox > a,
+.logInBox > a {
+  color: #38b30d;
+  text-decoration: none;
+}
+
+/* 경고 메세지 */
+.signUpPasswordAlert,
+.signUpEmaildAlert,
+.signUpEmailEmptyAlert,
+.loginIdPasswordAlert {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: rgb(250, 0, 0);
+  display: none;
+}
+
+.signUpPasswordAlert.active,
+.signUpEmaildAlert.active,
+.signUpEmailEmptyAlert.active,
+.loginIdPasswordAlert.active {
+  display: block;
+}
+
+/* 로그인박스(테스트용) */
+.headerLoginBtn {
+  display: none;
+}
+
+.headerLoginBtn.active {
+  display: block;
+}
+
+/* 로그아웃 박스 */
+.headerLogoutBtn {
+  display: none;
+}
+
+.headerLogoutBtn.active {
+  display: block;
+}
+
+/* 로그아웃 박스 */
+.headerLogoutBtn {
+  display: none;
+}
+
+.headerLogoutBtn.active {
+  display: block;
+}
 /* 초원님 main CSS ↓ */
 /* team page css */
 .team {
@@ -253,6 +395,7 @@ body {
   width: 1200px;
   /* background-color: skyblue; */
   color: #38B30D;
+
 }
 
 .teammateIntro_members {
@@ -274,7 +417,8 @@ body {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
-  cursor : pointer
+  cursor: pointer;
+
 }
 
 .teammateRightEnd {
@@ -285,7 +429,7 @@ body {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
-  cursor : pointer
+  cursor: pointer;
 }
 
 .teammateLeftEnd {
@@ -300,16 +444,13 @@ body {
 }
 
 .teammate:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
-  
   transition: 0.3s;
 }
 
 .teammateLeftEnd:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
@@ -318,11 +459,9 @@ body {
 }
 
 .teammateRightEnd:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
-  
   transition: 0.5s;
 }
 
@@ -363,7 +502,6 @@ body {
 }
 
 .teammateModalBody{
-
   position: fixed;
   left: 50%;
   top: 50%;
@@ -404,7 +542,6 @@ body {
 
 .modalTeammateProfile
 {
-  
   margin-left: 55px;
 }
 
@@ -414,7 +551,6 @@ body {
 }
 
 .modalTeammatePosition {
-
   font-size: 24px;
   color: #38B30D;
 }
@@ -444,3 +580,104 @@ body {
 }
 
 /* 남송님 cheerMsg CSS ↓ */
+.cheerMsg > .msg {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.cheerMsgWrapper {
+  margin: 10px 10%;
+  height: 100px;
+  padding: 20px 40px 20px 20px;
+  background-color: #cde5c4;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.cheerMsgInput {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50px;
+  font-size: 18px;
+  color: white;
+  padding: 0 30px;
+  font-weight: bold;
+}
+
+.cheerMsgInput::placeholder {
+  color: white;
+}
+
+.cheerMsgInput:focus {
+  outline: none;
+}
+
+.cheerMsgWrapper > img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.author {
+  width: 150px;
+  height: 100%;
+  padding: 10px 30px;
+  border: transparent;
+  border-radius: 50px;
+  margin: 0 20px;
+  font-size: 18px;
+}
+.author:focus {
+  outline: none;
+}
+
+.cheerMsgWrapper > p {
+  font-size: 35px;
+  text-align: center;
+  width: 70%;
+  margin-right: 3%;
+}
+
+.cheerMsgWrapper > span {
+  color: #808080;
+  font-size: 16px;
+  font-weight: lighter;
+  width: 50px;
+}
+
+.cheerMsg > button {
+  font-family: "Pretendard", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #38b30d;
+  color: white;
+  margin-top: 80px;
+  padding: 10px 30px;
+  border: 0px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.cheerMsg > button:hover {
+  background-color: #30960b;
+}
+
+.msgInput {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+  font-size: 18px;
+  border: transparent;
+  border-radius: 50px;
+}
+.msgInput:focus {
+  outline: none;
+}

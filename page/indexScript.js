@@ -132,3 +132,52 @@ TEAMMATE03_MODAL_EXIT_BTN.addEventListener("click", exitModal03);
 TEAMMATE04_MODAL_EXIT_BTN.addEventListener("click", exitModal04);
 TEAMMATE05_MODAL_EXIT_BTN.addEventListener("click", exitModal05);
 TEAMMATE06_MODAL_EXIT_BTN.addEventListener("click", exitModal06);
+
+
+/** Firebase 불러오기, 설정 */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC55DiwDHYqn-UDSByfTGIlXOX0wxmKg9w",
+  authDomain: "teamproject-bea46.firebaseapp.com",
+  projectId: "teamproject-bea46",
+  storageBucket: "teamproject-bea46.appspot.com",
+  messagingSenderId: "144679276817",
+  appId: "1:144679276817:web:6b776b3e6fdffa90eabcb0",
+  measurementId: "G-Q4B1JB11YB",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+/** 응원의 말 Input, button */
+const cheerBtn = document.getElementsByClassName("cheerMsgBtn")[0];
+let cheerText = document.getElementById("msgInput");
+let cheerAuthor = document.getElementById("name");
+const logInPage = document.querySelector(".logInPage");
+
+/** Input창 클릭 시, 유저인지 아닌지에 따라 로그인 창 */
+cheerText.addEventListener("click", () => {
+  if (!auth.currentUser) {
+    logInPage.classList.add("active");
+  }
+});
+
+/** 버튼 클릭 시 파이어 베이스에 등록 */
+cheerBtn.addEventListener("click", () => {
+  if (cheerText.value == "" || cheerAuthor.value == "") {
+    alert("빈칸을 입력하세요.");
+  } else {
+    addDoc(collection(db, "Cheering message"), {
+      name: cheerAuthor.value,
+      comment: cheerText.value,
+    }).then(() => {
+      window.location.href = "cheerMsg.html";
+    });
+  }
+});
+

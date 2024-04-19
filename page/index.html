@@ -6,22 +6,83 @@
     <title>MiniProject_아이(i)들</title>
     <link rel="stylesheet" href="./indexStyle.css" />
   </head>
+
   <body>
     <div class="content_wrapper">
       <!-- 초원님 메인 페이지 div -->
-      <div class="transparentBlackBackGround">
-        <div class="main">
-          <header class="header">
-            <img class="headerLogo" src="../img/logo_white.png" />
-            <button class="headerBtn" onclick="location.href='cheerMsg.html'">응원의 글</button>
-            <button class="headerLoginBtn">Login</button>
-            <button class="headerLogoutBtn">Logout</button>
-            <!-- 태윤님 메인 페이지 div -->
-            <div class="login"></div>
-          </header>
-          <div class="mainContent">
-            <img class="mainLogo" src="../img/logo_white.png" />
+
+      <div class="main">
+        <header class="header">
+          <img class="headerLogo" src="../img/logo_white.png" />
+          <button class="headerBtn" onclick="location.href='cheerMsg.html'">응원의 글</button>
+          <button class="headerLoginBtn">Login</button>
+          <button class="headerLogoutBtn">Logout</button>
+          <!-- 태윤님 메인 페이지 div -->
+
+          <div class="login">
+            <!-- 로그인 모달 -->
+            <div class="logInPage">
+              <div class="logInModalBox">
+                <span class="modalClose logInModalClose">✖</span>
+                <!-- 로그인 폼 -->
+                <div class="logInForm">
+                  <form action="#">
+                    <h2>로그인</h2>
+                    <div class="inputBox">
+                      <input id="logInEmail" type="email" placeholder="이메일을 입력해주세요." required />
+                    </div>
+                    <div class="inputBox">
+                      <input id="logInPassword" type="password" placeholder="비밀번호를 입력해주세요." required />
+                    </div>
+                    <p class="loginIdPasswordAlert">ID와 패스워드를 확인해주세요!</p>
+                    <button id="logInButton" class="logInButtonClass" type="submit">로그인</button>
+                    <div class="signUpBox">
+                      <span>아이디가 없으신가요?</span>
+                      <a href="#" id="signUpPageButton">회원가입</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- 회원가입 모달 -->
+            <div class="signUpPage">
+              <div class="formContainer signUpModalBox">
+                <span class="modalClose signUpModalClose">✖</span>
+                <!-- 회원가입 폼 -->
+                <div class="singUpForm">
+                  <form action="#">
+                    <h2>회원가입</h2>
+                    <div class="inputBox">
+                      <input id="signUpEmail" type="email" placeholder="이메일을 입력해주세요" required />
+                    </div>
+                    <div class="inputBox">
+                      <input
+                        id="signUpPassword"
+                        type="password"
+                        placeholder="비밀번호를 입력해주세요 (최소 6자)"
+                        required
+                      />
+                    </div>
+                    <div class="inputBox">
+                      <input id="signUpConfirmPassword" type="password" placeholder="비밀번호 확인" required />
+                    </div>
+                    <p class="signUpEmaildAlert">이메일이 사용 중이거나 형식에 맞지 않습니다.</p>
+                    <p class="signUpPasswordAlert">비밀번호가 맞지 않습니다!</p>
+                    <p class="signUpEmailEmptyAlert">이메일을 입력해주세요!</p>
+                    <button id="signUpButton" class="signUpButtonClass">회원가입</button>
+                    <div class="logInBox">
+                      <span>이미 회원이신가요?</span>
+                      <a href="#" id="logInPageButton">로그인</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+        </header>
+        <div class="mainContent">
+          <img class="mainLogo" src="../img/logo_white.png" />
         </div>
       </div>
 
@@ -270,7 +331,13 @@
 
       <!-- 남송님 응원글 페이지 div -->
       <div class="cheerMsg">
-        응원글을 작성하는 남송님 페이지입니다.
+        <p class="msg">아이(i)들에게<br />응원의 한마디를 보내보세요</p>
+        <div class="cheerMsgWrapper">
+          <input class="author" id="name" placeholder="작성자" />
+          <input id="msgInput" class="msgInput" placeholder="응원의 메세지를 남겨주세요." />
+        </div>
+        <button class="cheerMsgBtn">응원하기</button>
+
         <footer class="footer">
           <img src="../img/logo_white.png" />
           <div class="footerDiv">
@@ -287,6 +354,8 @@
         </footer>
       </div>
     </div>
-    <script src="./indexScript.js"></script>
+    <script type="module" src="./indexScript.js"></script>
+    <script type="module" src="./modal.js"></script>
+    <script type="module" src="./register.js"></script>
   </body>
 </html>
