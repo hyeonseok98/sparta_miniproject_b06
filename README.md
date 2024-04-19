@@ -1,7 +1,5 @@
 # 아이(i)들을 소개합니다.✨
-<br />
 
-## 🎲 소개
 안녕하세요 저희는 6명 모두 MBTI I로 똘똘 뭉친 <b>아이(i)들</b>입니다.
 <br /><br />
 <div style="display: flex; align-items">
