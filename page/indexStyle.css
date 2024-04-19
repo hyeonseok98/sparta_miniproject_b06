@@ -40,7 +40,6 @@ body {
 }
 
 .member {
-
   width: 100%;
   height: 100dvh;
 }
@@ -55,104 +54,101 @@ body {
 /* 로그인, 회원가입 페이지 */
 .logInPage,
 .signUpPage {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: rgba(0, 0, 0, 0.3);
-	display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
   z-index: 1050;
 }
 
 /* 로그인, 회원가입 모달창 */
 .logInModalBox,
 .signUpModalBox {
-	position: absolute;
-	max-width: 360px;
-	width: 100%;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 25px;
-	border: 0.5px solid #38B30D;
-	border-radius: 12px;
-	box-shadow: rgba(0, 0, 0, 0.1);
-	background-color: #fff;
-	z-index: 101;
+  position: absolute;
+  max-width: 360px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  border: 0.5px solid #38b30d;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 101;
 }
-
 
 .logInPage.active {
-	display: flex;
+  display: flex;
 }
 
-
 .signUpPage.active {
-	display: flex;
+  display: flex;
 }
 
 .logInModalBox h2,
 .signUpModalBox h2 {
-	font-size: 24px;
-	text-align: center;
-	color: #38B30D;
+  font-size: 24px;
+  text-align: center;
+  color: #38b30d;
 }
 
 .modalClose {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 14px;
-	opacity: 0.7;
-	cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .inputBox {
-	position: relative;
-	margin-top: 30px;
-	width: 100%;
-	height: 40px;
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 40px;
 }
 
 .inputBox input {
-	height: 100%;
-	width: 100%;
-	border: none;
-	outline: none;
-	border-bottom: 1px solid #aaaaaa;
-	transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #aaaaaa;
+  transition: all 0.3s ease;
 }
 
 .inputBox input:focus {
-	border-color: #38B30D;
+  border-color: #38b30d;
 }
 
 .logInButtonClass,
 .signUpButtonClass {
-	background-color: #38B30D;
-	margin-top: 15px;
-	width: 100%;
-	padding: 10px 0;
-	border-radius: 6px;
-	border: none;
-	font-size: 16px;
-	color: #fff;
-	cursor: pointer;
+  background-color: #38b30d;
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 }
-
 
 .signUpBox,
 .logInBox {
-	text-align: center;
-	margin-top: 10px;
-	font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .signUpBox > a,
 .logInBox > a {
-	color: #38B30D;
-	text-decoration: none;
+  color: #38b30d;
+  text-decoration: none;
 }
 
 /* 경고 메세지 */
@@ -160,46 +156,45 @@ body {
 .signUpEmaildAlert,
 .signUpEmailEmptyAlert,
 .loginIdPasswordAlert {
-	margin-top: 10px;
-	margin-bottom: 0;
-	font-size: 14px;
-	color: rgb(250, 0, 0);
-	display: none;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: rgb(250, 0, 0);
+  display: none;
 }
 
 .signUpPasswordAlert.active,
 .signUpEmaildAlert.active,
 .signUpEmailEmptyAlert.active,
 .loginIdPasswordAlert.active {
-	display: block;
+  display: block;
 }
-
 
 /* 로그인박스(테스트용) */
 .headerLoginBtn {
-	display: none;
+  display: none;
 }
 
 .headerLoginBtn.active {
-	display: block;
+  display: block;
 }
 
 /* 로그아웃 박스 */
 .headerLogoutBtn {
-	display: none;
+  display: none;
 }
 
 .headerLogoutBtn.active {
-	display: block;
+  display: block;
 }
 
 /* 로그아웃 박스 */
 .headerLogoutBtn {
-	display: none;
+  display: none;
 }
 
 .headerLogoutBtn.active {
-	display: block;
+  display: block;
 }
 /* 초원님 main CSS ↓ */
 /* team page css */
@@ -396,7 +391,7 @@ body {
 
   width: 1200px;
   /* background-color: skyblue; */
-  color: #38B30D;
+  color: #38b30d;
 }
 
 .teammateIntro_members {
@@ -418,7 +413,7 @@ body {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
-  cursor : pointer
+  cursor: pointer;
 }
 
 .teammateRightEnd {
@@ -429,7 +424,7 @@ body {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
-  cursor : pointer
+  cursor: pointer;
 }
 
 .teammateLeftEnd {
@@ -440,33 +435,30 @@ body {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
-  cursor : pointer;
+  cursor: pointer;
 }
 
 .teammate:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
-  
+
   transition: 0.3s;
 }
 
 .teammateLeftEnd:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
-  
+
   transition: 0.3s;
 }
 
 .teammateRightEnd:hover {
-
   width: 270px;
   height: 330px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.18);
-  
+
   transition: 0.5s;
 }
 
@@ -484,7 +476,7 @@ body {
 .teammatePosition {
   margin-top: 25px;
   font-size: 20px;
-  color: #38B30D;
+  color: #38b30d;
 }
 
 .teammateName {
@@ -493,47 +485,44 @@ body {
   color: #444742;
 }
 
-.teammateModal{
-  position:absolute;
-  display:none;
+.teammateModal {
+  position: absolute;
+  display: none;
   justify-content: center;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-  background-color: rgba(0,0,0,0.4);
-  
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.teammateModalBody{
-
+.teammateModalBody {
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width:500px; 
-  height:780px; 
+  width: 500px;
+  height: 780px;
 
-
-  background-color: rgb(255,255,255); 
-  border-radius:10px;  
-  box-shadow:0 2px 3px 0 rgba(34,36,38,0.25); 
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.25);
 }
 
-.modalExitBtn{
+.modalExitBtn {
   margin: 30px 0px 0px 430px;
-  border:rgba(255, 255, 255, 0);
+  border: rgba(255, 255, 255, 0);
   background-color: rgba(255, 255, 255, 0);
   font-size: 2em;
   font-weight: bold;
-  color:rgb(159, 159, 159);
-  cursor : pointer;
+  color: rgb(159, 159, 159);
+  cursor: pointer;
 }
 
-.modalExitBtn:hover{
-  color:rgb(49, 96, 34);
+.modalExitBtn:hover {
+  color: rgb(49, 96, 34);
   transition: 0.5s;
 }
 
@@ -543,12 +532,10 @@ body {
   margin-left: 50px;
   display: flex;
   flex-direction: row;
-  align-items:end;
+  align-items: end;
 }
 
-.modalTeammateProfile
-{
-  
+.modalTeammateProfile {
   margin-left: 55px;
 }
 
@@ -558,9 +545,8 @@ body {
 }
 
 .modalTeammatePosition {
-
   font-size: 24px;
-  color: #38B30D;
+  color: #38b30d;
 }
 
 .modalTeammateName {
@@ -570,7 +556,7 @@ body {
   color: #000000;
 }
 
-.modalTeammateDescription{
+.modalTeammateDescription {
   width: 400px;
   margin-top: 50px;
   margin-left: 50px;
@@ -588,7 +574,7 @@ body {
 }
 
 /* 남송님 cheerMsg CSS ↓ */
-.cheerMsg >.msg{
+.cheerMsg > .msg {
   font-size: 32px;
   font-weight: bold;
   font-family: "Pretendard", Arial, Helvetica, sans-serif;
@@ -600,8 +586,8 @@ body {
   margin: 10px 10%;
   height: 100px;
   padding: 20px 40px 20px 20px;
-  background-color: #CDE5C4;
-  display: flex; 
+  background-color: #cde5c4;
+  display: flex;
   align-items: center;
   border-radius: 10px;
 }
@@ -618,18 +604,20 @@ body {
   font-weight: bold;
 }
 
-.cheerMsgInput::placeholder{
-  color: white
+.cheerMsgInput::placeholder {
+  color: white;
 }
 
-.cheerMsgInput:focus{ outline: none;}
+.cheerMsgInput:focus {
+  outline: none;
+}
 
-.cheerMsgWrapper > img{
+.cheerMsgWrapper > img {
   width: 50px;
   margin-right: 10px;
 }
 
-.author{
+.author {
   width: 150px;
   height: 100%;
   padding: 10px 30px;
@@ -638,19 +626,19 @@ body {
   margin: 0 20px;
   font-size: 18px;
 }
-.author:focus{
+.author:focus {
   outline: none;
 }
 
-.cheerMsgWrapper > p{
+.cheerMsgWrapper > p {
   font-size: 35px;
   text-align: center;
   width: 70%;
   margin-right: 3%;
 }
 
-.cheerMsgWrapper > span{
-  color: #808080;;
+.cheerMsgWrapper > span {
+  color: #808080;
   font-size: 16px;
   font-weight: lighter;
   width: 50px;
@@ -660,19 +648,19 @@ body {
   font-family: "Pretendard", Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: bold;
-  background-color: #38B30D;
+  background-color: #38b30d;
   color: white;
   margin-top: 80px;
   padding: 10px 30px;
   border: 0px;
   border-radius: 20px;
   position: absolute;
-  left: 50%; 
+  left: 50%;
   transform: translateX(-50%);
   text-align: center;
 }
 
-.cheerMsg > button:hover{
+.cheerMsg > button:hover {
   background-color: #30960b;
 }
 
@@ -684,6 +672,6 @@ body {
   border: transparent;
   border-radius: 50px;
 }
-.msgInput:focus{
+.msgInput:focus {
   outline: none;
 }
