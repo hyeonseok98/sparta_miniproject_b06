@@ -133,7 +133,6 @@ TEAMMATE04_MODAL_EXIT_BTN.addEventListener("click", exitModal04);
 TEAMMATE05_MODAL_EXIT_BTN.addEventListener("click", exitModal05);
 TEAMMATE06_MODAL_EXIT_BTN.addEventListener("click", exitModal06);
 
-
 /** Firebase 불러오기, 설정 */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -147,6 +146,7 @@ const firebaseConfig = {
   messagingSenderId: "144679276817",
   appId: "1:144679276817:web:6b776b3e6fdffa90eabcb0",
   measurementId: "G-Q4B1JB11YB",
+  databaseURL: "https://teamproject-bea46-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
 // Initialize Firebase
@@ -181,3 +181,74 @@ cheerBtn.addEventListener("click", () => {
   }
 });
 
+/**
+ * chatModal Content(Firebase Realtime Database 사용)
+ */
+const msgInput = document.getElementById("messageInput");
+const msgButton = document.getElementById("messageSubmitButton");
+let booleanState = false;
+const app2 = firebase.initializeApp(firebaseConfig);
+let database = firebase.database();
+
+//DB에서 실시간으로 채팅 가져옴
+database.ref("messages").on("child_added", (snapshot) => {
+  const messageData = snapshot.val();
+  const message = messageData.message;
+
+  addMessage(message, booleanState);
+  booleanState = !booleanState;
+});
+
+// 메세지 쓰기 함수
+function writeData(msg) {
+  let messageData = firebase.database().ref("messages").push();
+  messageData.set({
+    message: msg,
+  });
+}
+
+function addMessage(message, ownMessage) {
+  let messageElement = document.createElement("div");
+  messageElement.textContent = message;
+  if (ownMessage) {
+    messageElement.classList.add("myMessage");
+  } else {
+    messageElement.classList.add("yourMessage");
+  }
+  if (messageElement.textContent.trim() !== "") {
+    chatBoard.appendChild(messageElement);
+  }
+  chatBoard.scrollTop = chatBoard.scrollHeight;
+}
+
+msgInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    const message = msgInput.value;
+    writeData(message);
+    msgInput.value = "";
+  }
+});
+
+msgButton.addEventListener("click", function (e) {
+  const message = msgInput.value;
+  writeData(message);
+  msgInput.value = "";
+});
+
+// chatModal 여닫기
+const openChatBtn = document.getElementById("openChatBoard");
+const closeBtn = document.getElementById("closeBtn");
+const chatModal = document.getElementById("board");
+let modalOpened = false;
+
+function toggleModal() {
+  chatModal.classList.toggle("active");
+}
+
+openChatBtn.addEventListener("click", toggleModal);
+closeBtn.addEventListener("click", toggleModal);
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    toggleModal();
+  }
+});

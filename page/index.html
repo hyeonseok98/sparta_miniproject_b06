@@ -352,8 +352,29 @@
             </div>
           </div>
         </footer>
+
+        <div id="openChatBoard">
+          <img src="../img/msg_icon.png" alt="msg" id="openChatBoardIcon" />
+        </div>
+      </div>
+      <div id="modalWrapper">
+        <div id="board">
+          <div id="reviewBoard">
+            <div id="boardHeader">
+              <img src="../img/logo_black.png" alt="logo" class="boardHeaderImg" />
+              <img src="../img/closeBtn_16.png" alt="X" id="closeBtn" />
+            </div>
+            <div id="chatBoard"></div>
+            <div id="inputContianer">
+              <input type="text" id="messageInput" placeholder="응원의 한마디를 부탁해요!" />
+              <button type="submit" id="messageSubmitButton">전송</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
     <script type="module" src="./indexScript.js"></script>
     <script type="module" src="./modal.js"></script>
     <script type="module" src="./register.js"></script>

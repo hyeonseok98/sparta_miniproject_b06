@@ -38,6 +38,7 @@ body {
   top: 5.6vh;
   left: 6.78vw;
   transition: top 0.3s, left 0.3s;
+  transition-timing-function: ease-out;
 }
 
 .logoContainer:hover {
