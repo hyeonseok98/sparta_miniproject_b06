@@ -133,6 +133,7 @@ TEAMMATE04_MODAL_EXIT_BTN.addEventListener("click", exitModal04);
 TEAMMATE05_MODAL_EXIT_BTN.addEventListener("click", exitModal05);
 TEAMMATE06_MODAL_EXIT_BTN.addEventListener("click", exitModal06);
 
+
 /** Firebase 불러오기, 설정 */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { collection, addDoc, getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -179,3 +180,4 @@ cheerBtn.addEventListener("click", () => {
     });
   }
 });
+
