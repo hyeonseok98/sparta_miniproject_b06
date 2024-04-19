@@ -238,11 +238,35 @@ msgButton.addEventListener("click", function (e) {
 // chatModal 여닫기
 const openChatBtn = document.getElementById("openChatBoard");
 const closeBtn = document.getElementById("closeBtn");
+const modalContainer = document.getElementById("modalWrapper");
 const chatModal = document.getElementById("board");
 let modalOpened = false;
 
+function handleModalScroll() {
+  const chatBoard = document.getElementById("chatBoard");
+
+  chatBoard.scrollTop = chatBoard.scrollHeight;
+  window.removeEventListener("wheel", handleModalScroll);
+}
+
+function scrollController() {
+  if (chatModal.classList.contains("active")) {
+    window.removeEventListener("wheel", handleScroll);
+    window.addEventListener("wheel", handleModalScroll, { passive: false });
+    handleModalScroll();
+  } else {
+    window.addEventListener("wheel", handleScroll, { passive: false });
+    window.removeEventListener("wheel", handleModalScroll);
+  }
+}
+
+/**
+ * 모달 오픈 시 한 번만 스크롤을 맨 아래로 내려 최신 내용부터 확인
+ * 모달 오픈 시 뒷배경 스크롤 기능을 비활성화하여 모달 스크롤 기능 활성화
+ */
 function toggleModal() {
   chatModal.classList.toggle("active");
+  scrollController();
 }
 
 openChatBtn.addEventListener("click", toggleModal);
@@ -250,5 +274,13 @@ closeBtn.addEventListener("click", toggleModal);
 window.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     toggleModal();
+  }
+});
+
+modalContainer.addEventListener("click", function (e) {
+  if (e.target == modalContainer) {
+    chatModal.classList.remove("active");
+    window.addEventListener("wheel", handleScroll, { passive: false });
+    window.removeEventListener("wheel", handleModalScroll);
   }
 });

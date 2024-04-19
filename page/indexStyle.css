@@ -172,10 +172,17 @@ body {
 .loginIdPasswordAlert.active {
   display: block;
 }
+.headerLogo {
+  cursor: pointer;
+}
 
 /* 로그인박스(테스트용) */
 .headerLoginBtn {
   display: none;
+}
+
+.headerLoginBtn:hover {
+  cursor: pointer;
 }
 
 .headerLoginBtn.active {
@@ -185,6 +192,10 @@ body {
 /* 로그아웃 박스 */
 .headerLogoutBtn {
   display: none;
+}
+
+.headerLogoutBtn {
+  cursor: pointer;
 }
 
 .headerLogoutBtn.active {
@@ -297,6 +308,7 @@ body {
   font-weight: bold;
   font-family: "Pretendard", Arial, Helvetica, sans-serif;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .headerBtn:hover {
@@ -682,6 +694,14 @@ body {
 }
 
 /* chatModal CSS */
+#modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 #openChatBoard {
   display: flex;
   position: fixed;
@@ -695,7 +715,6 @@ body {
   margin-left: 50px;
   background-color: #f0f89b;
   box-shadow: 6px 5px 5px 0px rgba(125, 125, 125, 0.75);
-
   cursor: pointer;
   z-index: 999;
 }
