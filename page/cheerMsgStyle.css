@@ -46,6 +46,26 @@ body {
   height: auto;
 }
 
+.logoContainer {
+  position: absolute;
+  width: 220px;
+  padding: 0px 50px 50px 0px;
+  top: 5.6vh;
+  left: 6.78vw;
+  transition: top 0.3s, left 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.logoContainer:hover {
+  top: calc(5.6vh + 2vh);
+  left: calc(6.78vw + 2vw);
+}
+
+.headerLogo {
+  width: 160px;
+  height: auto;
+}
+
 .title {
   margin: 50px;
   font-size: 40px;
