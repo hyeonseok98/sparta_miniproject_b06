@@ -243,12 +243,19 @@ let modalOpened = false;
 
 function toggleModal() {
   chatModal.classList.toggle("active");
+  modalOpened = !modalOpened;
 }
 
 openChatBtn.addEventListener("click", toggleModal);
 closeBtn.addEventListener("click", toggleModal);
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+  if (e.key === "Escape" && modalOpened) {
+    toggleModal();
+  }
+});
+
+document.addEventListener("mouseup", function (e) {
+  if (!chatModal.contains(e.target) && modalOpened) {
     toggleModal();
   }
 });
